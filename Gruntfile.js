@@ -23,7 +23,20 @@ module.exports = function (grunt) {
 
       // when this task is run, lint the Gruntfile and all js files in src
       build: ['Gruntfile.js', 'src/**/*.js']
+    },
+
+    // configure uglify to minify js files -------------------------------------
+    uglify: {
+      options: {
+        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+      },
+      build: {
+        files: {
+          'dist/js/magic.min.js': ['src/js/magic.js', 'src/js/magic2.js']
+        }
+      }
     }
+
 
   });
 
