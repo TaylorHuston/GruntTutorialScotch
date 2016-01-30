@@ -35,6 +35,14 @@ module.exports = function (grunt) {
           'dist/js/magic.min.js': ['src/js/magic.js', 'src/js/magic2.js']
         }
       }
+    },
+
+    less: {
+      build: {
+        files: {
+          'dist/css/pretty.css': 'src/css/pretty.less'
+        }
+      }
     }
 
 
