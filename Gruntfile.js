@@ -23,6 +23,7 @@ module.exports = function (grunt) {
 
       // when this task is run, lint the Gruntfile and all js files in src
       build: ['Gruntfile.js', 'src/**/*.js']
+  
     },
 
     // configure uglify to minify js files -------------------------------------
@@ -70,5 +71,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+
+  // ============= // CREATE TASKS ========== //
+  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'less']);
 
 };
