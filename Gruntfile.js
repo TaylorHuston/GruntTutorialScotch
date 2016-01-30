@@ -2,7 +2,7 @@
 
 // our wrapper function (required by grunt and its plugins)
 // all configuration goes inside this function
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // ===========================================================================
   // CONFIGURE GRUNT ===========================================================
@@ -14,15 +14,15 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     // all of our configuration will go here
+
+    // configure jshint to validate js files -----------------------------------
     jshint: {
       options: {
-        reporter: require('jshint-stylish'); // use jshint-stylish to make our errors look and read good
+        reporter: require('jshint-stylish') // use jshint-stylish to make our errors look and read good
       },
 
       // when this task is run, lint the Gruntfile and all js files in src
-      build: {
-        ['Gruntfile.js', 'src/**/*.js'];
-      }
+      build: ['Gruntfile.js', 'src/**/*.js']
     }
 
   });
