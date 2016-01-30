@@ -43,6 +43,18 @@ module.exports = function (grunt) {
           'dist/css/pretty.css': 'src/css/pretty.less'
         }
       }
+    },
+
+    // configure cssmin to minify css files ------------------------------------
+    cssmin: {
+      options: {
+        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+      },
+      build: {
+        files: {
+          'dist/css/style.min.css': 'src/css/style.css'
+        }
+      }
     }
 
 
